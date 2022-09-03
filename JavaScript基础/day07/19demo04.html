@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" class="name" placeholder="姓名">
+<input type="text" class="age" placeholder="年龄">
+<button>添加</button>
+<ul>
+
+</ul>
+<script >
+    let inputName = document.querySelector(".name");
+    let inputAge = document.querySelector(".age");
+    let btn = document.querySelector("button");
+    let ul = document.querySelector("ul");
+    let studentList = [];
+    class Student{
+        constructor(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+    }
+    btn.onclick = function () {
+        // student.name = inputName.value;
+        // student.age = inputAge.value;
+        let  student = new Student(inputName.value,inputAge.value);
+        studentList.push(student);
+        console.log(studentList);
+        let li = document.createElement("li");
+        let txt = document.createTextNode(`名字：${student.name},年龄${student.age}`);
+        li.appendChild(txt);
+        ul.appendChild(li);
+    }
+</script>
+</body>
+</html>
