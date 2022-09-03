@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>首页</h1>
+    <button>获取数据</button>
+    <script>
+        document.querySelector("button").onclick = function () {
+            // myajax("get", "/data", function (res) {
+            //     alert(res);
+            // })
+
+            myajax("get", "/data").then(res => {
+                alert(res);
+            });
+
+            // let xhr = new XMLHttpRequest();
+            // xhr.open("get", "/data"); //规定请求的类型
+            // xhr.send();
+            // xhr.onreadystatechange = function () {
+            //     if (xhr.readyState === 4 && xhr.status === 200) {
+            //         alert(xhr.responseText);
+            //     }
+            // }
+        }
+
+        //建议不使用回调函数处理异步问题
+        // function myajax(method, url, next) {
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.open(method, url); //规定请求的类型
+        //     xhr.send();
+        //     xhr.onreadystatechange = function () {
+        //         if (xhr.readyState === 4 && xhr.status === 200) {
+        //             next(xhr.responseText);
+        //         }
+        //     }
+        // }
+        //promise
+        function myajax(method, url) {
+            return new Promise(function (resolve) {
+                let xhr = new XMLHttpRequest();
+                xhr.open(method, url); //规定请求的类型
+                xhr.send();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        resolve(xhr.responseText);
+                    }
+                }
+            })
+
+        }
+    </script>
+</body>
+
+</html>
