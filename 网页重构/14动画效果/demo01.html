@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* keyframe定义一个动画 */
+        @keyframes anim {
+            /* 0% {
+                transform: rotate(0deg);
+            }
+
+            20% {
+                width: 200px;
+                height: 200px;
+                transform: rotate(360deg);
+            }
+
+            40% {
+                background-color: yellow;
+                width: 300px;
+                height: 300px;
+            }
+
+            100% {
+                width: 100px;
+                height: 100px;
+            } */
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 100px auto;
+            /* animation: anim 2s linear 1s infinite; */
+            animation: anim 20s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+
+</html>

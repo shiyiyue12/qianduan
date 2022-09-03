@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clear::after,
+        .clear::before {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .content {
+            width: 300px;
+            height: 200px;
+            border: 1px solid red;
+            /* 设置元素浮动 */
+            float: left;
+            /* 通常设置成左浮动 */
+        }
+
+        .aside {
+            width: 100px;
+            height: 200px;
+            border: 1px solid blue;
+            /* 设置元素浮动 */
+            float: left;
+            /* 需要将两个元素都设置成浮动元素才能在同一行显示 */
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container clear">
+        <div class="content">
+            内容
+        </div>
+        <div class="aside">
+            边栏
+        </div>
+    </div>
+    <!-- 清除上述浮动元素对网页的影响 -->
+    <!-- <div class="clear"></div> -->
+    <div class="box"></div>
+    <div class="clear">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+
+</body>
+
+</html>
