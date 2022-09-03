@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script src="script/jquery.js"></script>
+<script >
+    //链式操作
+    $(".box").mouseenter(function (){
+        console.log("hello world");
+    }).mouseleave(function (){
+        console.log("hello world");
+    }).mousemove(function (e){
+        let x = e.pageX;
+        let y = e.pageY;
+        console.log(`x坐标是${x}，y坐标是${y}`);
+    });
+</script>
+</body>
+</html>

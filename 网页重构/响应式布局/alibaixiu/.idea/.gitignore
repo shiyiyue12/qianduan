@@ -1,8 +1,0 @@
-# 默认忽略的文件
-/shelf/
-/workspace.xml
-# 数据源本地存储已忽略文件
-/../../../../../../../../../../../:\Users\image\Desktop\学习资料\前端\前端学习\网页重构\响应式布局\alibaixiu\.idea/dataSources/
-/dataSources.local.xml
-# 基于编辑器的 HTTP 客户端请求
-/httpRequests/

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .picture-list img {
+            width: 320px;
+            height: 160px;
+        }
+
+        .big-picture img {
+            width: 640px;
+            height: 320px;
+        }
+
+        .big-picture {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<!--https://blog.csdn.net/qq_27626333/article/details/51927425-->
+<div class="picture-list">
+    <img src="images/1.png" alt="">
+    <img src="images/2.png" alt="">
+    <img src="images/3.png" alt="">
+</div>
+<div class="big-picture"></div>
+<script src="script/jquery.js"></script>
+<script>
+    $(".picture-list img").mouseenter(function () {
+        let src = $(this).attr("src");
+        let img = $(`<img src = "${src}">`);
+        $(".big-picture").html(img);
+    })
+    $(".picture-list img").mouseleave(function () {
+        $(".big-picture").html("");
+    });
+
+    $(".picture-list").mousemove(function (e) {
+        let x = e.pageX;
+        let y = e.pageY;
+        $(".big-picture").css("left", x + 10 + "px");
+        $(".big-picture").css("top", y + 10 + "px");
+    })
+
+</script>
+</body>
+</html>

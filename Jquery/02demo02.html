@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button{
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<input type="button" value="input按钮">
+<script src="script/jquery.js"></script>
+<script >
+    $("button").click(function (){
+        // 获取索引
+        // let index = $(this).index();
+        // console.log(index);
+        // let text = $(this).text();
+        // console.log(text);0
+        // $(this).text("新文本");
+        // let height = $(this).css("height");
+        // console.log(height);
+        // $(this).css("height","100px");
+        $(this).css({
+            width : "100px",
+            height : "100px"
+        })
+    });
+
+    $("input").click(function (){
+        $(this).val("新的val值");
+    })
+</script>
+</body>
+</html>
